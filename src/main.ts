@@ -26,7 +26,7 @@ async function bootstrap() {
 
   useContainer(app.select(AppModule), { fallbackOnErrors: true });
 
-  await app.listen(3000);
+  await app.listen(process.env.PORT || 3000);
 
   console.log('app listening on port http://localhost:3000/docs');
 }
