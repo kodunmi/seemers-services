@@ -90,6 +90,8 @@ export class AuthService {
   async verifyEmail({ email, otp }: VerifyEmailDto): Promise<User> {
     const user = await this.usersService.findOneByEmail(email);
 
+    console.log(user);
+
     if (!user) {
       throw new HttpException('User not found', HttpStatus.NOT_FOUND);
     }
