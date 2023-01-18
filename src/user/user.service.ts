@@ -77,9 +77,7 @@ export class UserService {
   findOneByEmail(email: string): Promise<User> {
     return this.userModel
       .findOne({
-        where: {
-          email: email,
-        },
+        email: email,
       })
       .exec();
   }
